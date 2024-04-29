@@ -88,7 +88,7 @@ var blockchain = function blockchain(){
       const previousBlock = chain[i - 1];
 
       if (currentBlock.previousHash !== validator.calculateHash(previousBlock)) return false;
-      if (validator.generateProof(currentBlock.transaction[0]) !== currentBlock.proof) return false;
+      if (validator.generateProof(currentBlock) !== currentBlock.proof) return false;
     }
     return true;
   }
